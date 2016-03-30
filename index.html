@@ -1,0 +1,128 @@
+<html ng-app="final">
+<head>
+    <meta charset="UTF-8">
+    <title>MyGallery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    
+</head>
+<body ng-controller="GalleryController">
+    {{2 + 2}}
+    <div class="container">
+           
+        <div class="panel panel-success">
+          <div class="panel-body">
+            My Gallery
+          </div> 
+          <div class="omaste">
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Add Image
+    </button>
+</div>         
+       
+    </div>
+ 
+        
+        <div class="image-gallery">
+            
+          
+        </div>
+ 
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Build out your Gallery and add a picture</h4>
+      </div>
+      <div class="modal-body" style:height="600px"> 
+            
+                
+            <form class="form-inline" id="new-image">
+                <div class="form-group">
+                     <label >Artist Name</label>
+                     <input type="text" class="form-control" name="artistName" ng-model="newImage.arist" placeholder="Artist Name" value="">
+                </div>
+                <div class="form-group">
+                     <label >Title</label>
+                     <input type="text" class="form-control" name="imageTitle" ng-model="newImage.title" placeholder="Title" value = "">
+                </div>
+                <div class="form-group">
+                     <label >Image URL</label>
+                     <input type="url" class="form-control" name="imageURL" ng-model="newImage.url" placeholder="Image URL" value="">
+                </div>
+                <div class="col-sm-4 col-md-4">
+    <div class="thumbnail">
+      <img ng-src="{{image.url}}" alt="...">
+      <div class="caption">
+        <h3>Title:{{image.title}}</h3>
+        <p>Artist:{{image.artist}}</p>
+        <p><a href="#" class="btn btn-primary" role="button">Purchase</a> <a href="#" class="btn btn-danger" role="button" ng-click="removeImage($index)">Remove</a></p>
+      </div>
+    </div>
+  </div>
+                
+                
+                
+                <button type="" id="add-image-button" class="btn btn-progress" ng-click="addImage()">Add Image</button>
+            </form>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng-repeat="image in images | orderBy: sortOrder">
+ <div class="row">
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail">
+      <img ng-src="http://yourpushfactor.com/wp-content/uploads/2014/04/pfcoverphoto.png" alt="image-one">
+      <div class="caption">
+        <h3>Title:{{image.title}}</h3>
+        <p>Artist:{{image.artist}}</p>
+        <p><a href="#" class="btn btn-primary" role="button">Purchase</a> <a href="#" class="btn btn-danger" role="button" ng-click="removeImage($index)">Remove</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail">
+      <img ng-src="http://raymmar.com/wp-content/uploads/2014/08/stop-reading-motivational-articles.jpg" alt="...">
+      <div class="caption">
+        <h3>Title:{{image.title}}</h3>
+        <p>Artist:{{image.artist}}</p>
+        <p><a href="#" class="btn btn-primary" role="button">Purchase</a> <a href="#" class="btn btn-danger" role="button" ng-click="removeImage($index)">Remove</a></p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail">
+      <img src="http://2.bp.blogspot.com/-gzED506eKYw/VjCrUN9Hl6I/AAAAAAAACn4/hem1GQCkOus/s300/herbert-simon-one-finds-limits-motivational-quote-www-positivethesaurus-com-small.jpg" alt="...">
+      <div class="caption">
+        <h3>Title:{{image.title}}</h3>
+        <p>Artist:{{image.artist}}</p>
+        <p><a href="#" class="btn btn-primary" role="button">Purchase</a> <a href="#" class="btn btn-danger" role="button" ng-click="removeImage($index)">Remove</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+</div>
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+    <script src="app.js"></script>
+    <script src="assets/gallery-controller.js"></script>
+</body>
+</html>
