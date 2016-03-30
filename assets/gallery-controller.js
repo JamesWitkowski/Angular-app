@@ -13,7 +13,7 @@ app.controller('GalleryController', function($scope){
         
     },{
         artist: "Unknown",
-        title: "Collaboate",
+        title: "Collaborate",
         url: "https://assets.entrepreneur.com/slideshow/10-motivational-posters-collaborate.jpg",
         
     },{
